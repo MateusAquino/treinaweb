@@ -1,6 +1,7 @@
 <h1 align="center">UX/UI</h1>
 <p align="center">Definido por <b>Don Normam</b></p>
 
+# UX
 **Experiência do Usuário** - Como uma pessoa se sente ao usar um produto (**ISO 9241-210**: são as respostas e percepções de uma pessoa resultantes do uso de um produto, sistema ou serviço).
 
 
@@ -24,12 +25,12 @@ Levar o usuário para onde ele quer, sendo que esta viagem tem de ser a mais pra
 
 ---
 Exemplo comum: Blindagem de aviões que retornavam nas áreas **menos** atingidas:  
-"A Method of Estimating Plane Vulnerability Based on Damage of Survivors" (1943)  
-“How Not to Be Wrong: The Power of Mathematical Thinking” (2014)
+*“A Method of Estimating Plane Vulnerability Based on Damage of Survivors”* (1943)  
+*“How Not to Be Wrong: The Power of Mathematical Thinking”* (2014)
 
 ## Entrevisa e Proto-persona
-Entrevista qualitativa (ABERTA): pessoalmente - sem indução, perguntas abertas, grupo inteligentemente escolhido.  
-Entrevista quantitativa (FECHADA): formulários online - disparo de informações, spam, não agrega conhecimento.  
+Entrevista **qualitativa** (ABERTA): pessoalmente - sem indução, perguntas abertas, grupo inteligentemente escolhido.  
+Entrevista **quantitativa** (FECHADA): formulários online - disparo de informações, spam, não agrega conhecimento.  
 Proto-persona: criar um personagem (tipo RPG mesmo) para controle de informações:  
 
     evitar perguntas do tipo "EU usaria isso?" e pensar em uma proto-persona: "FULANO usaria isso?"
@@ -54,6 +55,7 @@ Preocupações - Cores e Fontes
 Ferramenta para prototipagem: Sketch (MacOS) ou Axure
 
 ---
+# UI
 **Interface de Usuário** - A interface do utilizador ou interface de usuário, no campo de desenho industrial da interação homem-máquina, é o espaço onde a interação entre humanos e máquinas ocorre.
 
 Alguns pontos de UI Design:
