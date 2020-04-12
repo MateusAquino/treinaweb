@@ -1,0 +1,262 @@
+@charset "UTF-8";
+/* Configurações Iniciais */
+#my-div {
+  color: red;
+}
+
+#my-div:hover {
+  color: fuchsia;
+}
+
+/* Alinhamento de Seletores e Propriedades */
+.container {
+  width: 100px;
+}
+
+.container .text {
+  color: yellowgreen;
+}
+
+.container:hover {
+  color: blue;
+}
+
+.container.title {
+  color: violet;
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
+
+.container .box {
+  border: 5px solid blue;
+}
+
+/* CSS gerado com SassScript */
+.redStuff {
+  background: red;
+  top: 10px;
+  bottom: 10px;
+}
+
+.greenStuff {
+  background: green;
+  top: 10px;
+  bottom: 20px;
+}
+
+.useList {
+  margin: 35px 10px 50% 41rem;
+  top: 35px;
+  color: white;
+  background-color: black;
+}
+
+/* Utilizando Funções */
+a {
+  color: purple;
+}
+
+a:hover {
+  color: #91da00;
+}
+
+/* Desafio Aula 3 */
+.my-class {
+  color: purple;
+}
+
+/* Programação no CSS */
+.item-n-35 {
+  color: red;
+}
+
+.if-result {
+  color: blue;
+}
+
+.mixer-0 {
+  color: red;
+}
+
+.mixer-1 {
+  color: #aa0000;
+}
+
+.mixer-2 {
+  color: #550000;
+}
+
+.mixer-3 {
+  color: black;
+}
+
+.btn-red {
+  background-color: "red";
+}
+
+.btn-green {
+  background-color: "green";
+}
+
+.btn-blue {
+  background-color: "blue";
+}
+
+.classe-0 {
+  padding: 50px;
+}
+
+.classe-1 {
+  padding: 50px;
+}
+
+.classe-2 {
+  padding: 50px;
+}
+
+.classe-3 {
+  padding: 50px;
+}
+
+.classe-4 {
+  padding: 50px;
+}
+
+/* Funções */
+.teste {
+  color: #5d54fc;
+  background-color: #fc5d54;
+}
+
+/* Desafio Aula 4 */
+.btn-1 {
+  width: 100px;
+}
+
+.btn-2 {
+  width: 200px;
+}
+
+.btn-3 {
+  width: 300px;
+}
+
+.btn-4 {
+  width: 440px;
+}
+
+.btn-5 {
+  width: 550px;
+}
+
+/* Mixins */
+.my-box {
+  font-size: 18px;
+  color: #fc5d54;
+  background: white;
+  border: 5px solid #fc5d54;
+  padding: 10px;
+}
+
+.my-box a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+}
+
+.my-box a:hover {
+  color: red;
+}
+
+.my-box-2 {
+  color: #fc5d54;
+  background: white;
+  border: 50px solid #fc5d54;
+  padding: 10px;
+}
+
+/* Desafio Aula 5 */
+@media (min-width: 320px) and (max-width: 790px) {
+  .my-class {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* O poder do @extend */
+.bttn-confirm, .bttn-cancel {
+  min-width: 150px;
+  padding: 10px 20px;
+}
+
+.bttn-confirm {
+  background-color: #54fc5d;
+  color: white;
+}
+
+.bttn-cancel {
+  background-color: #fc5d54;
+  color: white;
+}
+
+/* Desafio Aula 6 */
+.btn-generic, .btn-confirm, .btn-cancel {
+  padding: 10px 20px;
+  min-width: 120px;
+}
+
+.btn-generic {
+  background-color: gray;
+}
+
+.btn-confirm {
+  background-color: green;
+}
+
+.btn-cancel {
+  background-color: red;
+}
+
+/* Sass com Estilo BEM */
+/* Block Element Modifier */
+.btn {
+  border: 1px solid black;
+}
+
+.btn__button {
+  color: green;
+}
+
+.btn--error {
+  color: red;
+}
+
+/* Sass com ITCSS */
+/* Inverted Triangle CSS - Diretório:
+
+dev/
+    1_settings                  (variaveis)
+        _1_settings.scss
+    2_tools                     (mixin/functions)
+        _2_tools.scss
+    3_generic                   (normalize/boxsizing)
+        _3_generic.scss
+    4_base                      (seleciona elementos: html, input)
+        _4_base.scss
+    5_objects                   (seleciona classes: .button, .container)
+        _5_objects.scss
+    6_components                (estilizar ids: #unicos)
+        _6_components.scss
+    7_trumps                    (!importants)
+        _7_trumps.scss
+    styles.scss
+
+onde styles.scss:
+    @import "1_settings/1_settings";
+    @import "2_tools/2_tools";
+    @import "3_generic/3_generic";
+    @import "4_base/4_base";
+    @import "5_objects/5_objects";
+    @import "6_components/6_components";
+    @import "7_trumps/7_trumps";
+*/

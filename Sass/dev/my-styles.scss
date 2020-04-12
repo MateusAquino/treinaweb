@@ -1,0 +1,255 @@
+/* Configurações Iniciais */
+#my-div {
+    color: red;
+    &:hover {
+        color: fuchsia;
+    }
+}
+
+/* Alinhamento de Seletores e Propriedades */
+.container {
+    width: 100px;
+    .text {   // classe filha
+        color: yellowgreen;
+    }
+    &:hover { // & = remove espaço
+        color: blue;
+    }
+    &.title {
+        color: violet;
+        margin: { // prop. json = repetição de prefixo
+            top: 5px;
+            bottom: 2px;
+        }
+    }
+    @import "my-styles2"; // Import da Partial 
+                          // + Copia classes do my-styles2.scss para o .container
+}
+
+/* CSS gerado com SassScript */
+$redColor: red;
+.redStuff {
+    $redColor: green !default; // atribui verde se ainda nao foi declarada
+    $gSize: 10px !global; // global
+    $lSize: 10px;         // local
+    background: $redColor;
+    top: $gSize;
+    bottom: $lSize
+}
+
+.greenStuff {
+    $lSize: 20px; //local
+    background: green;
+    top: $gSize;
+    bottom: $lSize
+}
+
+$myList: 35px 10px 50% 41rem; // Array
+$colors: (light: white, dark: black);
+$mode: light;
+.useList {
+    margin: $myList;
+    top: nth($myList, 1);
+    color: map-get($colors, $mode);
+    background-color: map-get($colors, dark);
+}
+
+/* Utilizando Funções */
+a {
+    color: mix(red, blue);
+    &:hover {
+        color: lighten(mix(green, yellow), 5%);
+    }
+}
+
+/* Desafio Aula 3 */
+$my-list: red green blue;
+.my-class {
+    color: mix(nth($my-list, 1), nth($my-list, 3));
+}
+
+/* Programação no CSS */
+$a: 35;
+.item-n-#{$a}{
+    color: $redColor;
+}
+
+@if $a>3 { // Fluxo
+    .if-result {
+        color: blue;
+    }
+} @else {
+    .if-result {
+        color: green;
+    }
+}
+
+@for $i from 0 through 3 { // Loop For
+    .mixer-#{$i}{
+        color: darken($color: red, $amount: $i/6*100%);
+    }
+}
+
+$cores: "red", "green", "blue";
+@each $cor in $cores {  // Loop Foreach
+    .btn-#{$cor} {
+        background-color: $cor;
+    }
+}
+
+$i: 0;
+@while $i < 5 { // Loop While (use com cuidado)
+    .classe-#{$i}{
+        padding: 50px;
+    }
+    $i: $i+1;
+}
+
+/* Funções */
+@function pastel($cor) {
+    $h: hue($cor);
+    @return hsl($h+3deg, 97%, 66%);
+}
+
+.teste {
+    color: pastel(blue);
+    background-color: pastel(red);
+}
+
+/* Desafio Aula 4 */
+@for $i from 1 through 5 {
+    .btn-#{$i}{
+        width: if($i<4, $i*100px, $i*110px);
+    }
+}
+
+/* Mixins */
+@mixin error-box($border-width:5px) {
+    color: pastel(red);
+    background: white;
+    border: $border-width solid pastel(red);
+    padding: 10px;
+}
+
+@mixin links {
+    text-decoration: none;
+    color: black;
+    @content; // conteudo recebido de um bloco
+              // utilizado para controlar lógicas e fluxos mais limpos
+}
+
+.my-box {
+    font-size: 18px;
+    @include error-box;
+
+    a {
+        @include links { // bloco a ser enviado ao @content
+            cursor: pointer;
+            &:hover {
+                color:red;
+            }
+        };
+    }
+}
+
+.my-box-2{
+    @include error-box(50px);
+}
+
+/* Desafio Aula 5 */
+@mixin scW($min, $max) {
+    @media (min-width: $min) and (max-width: $max) {
+        @content;
+    }
+}
+@mixin box($size) {
+    width: $size;
+    height: $size;
+}
+
+@include scW(320px, 790px) {
+    .my-class {
+        @include box(100px);
+    }
+}
+
+/* O poder do @extend */
+%bttn { // Placeholder
+    min-width: 150px;
+    padding: 10px 20px;
+}
+
+.bttn-confirm {
+    background-color: pastel(green);
+    color: white;
+    @extend %bttn;
+}
+
+.bttn-cancel {
+    background-color: pastel(red);
+    color: white;
+    @extend %bttn;
+}
+
+/* Desafio Aula 6 */
+%btn {
+    padding: 10px 20px;
+    min-width: 120px
+}
+
+.btn-generic {
+    background-color: gray;
+    @extend %btn;
+}
+
+.btn-confirm {
+    background-color: green;
+    @extend %btn;
+}
+
+.btn-cancel {
+    background-color: red;
+    @extend %btn;
+}
+
+/* Sass com Estilo BEM */
+/* Block Element Modifier */
+.btn {
+    border: 1px solid black;
+    &__button { // Elemento
+        color: green;
+    }
+    &--error { // Estado
+        color: red;
+    }
+}
+
+/* Sass com ITCSS */
+/* Inverted Triangle CSS - Diretório:
+
+dev/
+    1_settings                  (variaveis)
+        _1_settings.scss
+    2_tools                     (mixin/functions)
+        _2_tools.scss
+    3_generic                   (normalize/boxsizing)
+        _3_generic.scss
+    4_base                      (seleciona elementos: html, input)
+        _4_base.scss
+    5_objects                   (seleciona classes: .button, .container)
+        _5_objects.scss
+    6_components                (estilizar ids: #unicos)
+        _6_components.scss
+    7_trumps                    (!importants)
+        _7_trumps.scss
+    styles.scss
+
+onde styles.scss:
+    @import "1_settings/1_settings";
+    @import "2_tools/2_tools";
+    @import "3_generic/3_generic";
+    @import "4_base/4_base";
+    @import "5_objects/5_objects";
+    @import "6_components/6_components";
+    @import "7_trumps/7_trumps";
+*/
