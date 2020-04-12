@@ -1,7 +1,6 @@
 # CSS - Sass
-> O Sass (Syntactically Awesome Style Sheets ou Folhas de Estilo Sintaticamente Impressionantes) é um dos pré-processadores mais utilizados em todo o mundo.
-
-> O Sass é considerado, por seus autores, uma extensão do CSS3, porque permite trabalhar com aninhamento de regras, variáveis, mixins, herança de seletores, etc.
+> O Sass (Syntactically Awesome Style Sheets ou Folhas de Estilo Sintaticamente Impressionantes) é um dos pré-processadores mais utilizados em todo o mundo.  
+O Sass é considerado, por seus autores, uma extensão do CSS3, porque permite trabalhar com aninhamento de regras, variáveis, mixins, herança de seletores, etc.
 <p align="right">- TreinaWeb</p>
 
 ## Sobre o curso
@@ -22,7 +21,7 @@ Saída (compilado)
   color: purple;
 }
 ```
-
+---
 **Aula 4**
 Entrada (Sass)
 ```scss
@@ -50,7 +49,7 @@ Saída (compilado)
   width: 550px;
 }
 ```
-
+---
 **Aula 5**
 Entrada (Sass)
 ```scss
@@ -79,7 +78,7 @@ Saída (compilado)
   }
 }
 ```
-
+---
 **Aula 6**
 Entrada (Sass)
 ```scss
