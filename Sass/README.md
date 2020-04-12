@@ -9,14 +9,22 @@ Nesta pasta estão os arquivos desenvolvidos e produzidos durante o curso, entre
 
 ## Desafios
 **Aula 3**
+Entrada (Sass)
 ```scss
 $my-list: red green blue;
 .my-class {
     color: mix(nth($my-list, 1), nth($my-list, 3));
 }
 ```
----
+Saída (compilado)
+```css
+.my-class {
+  color: purple;
+}
+```
+
 **Aula 4**
+Entrada (Sass)
 ```scss
 @for $i from 1 through 5 {
     .btn-#{$i}{
@@ -24,8 +32,27 @@ $my-list: red green blue;
     }
 }
 ```
----
+Saída (compilado)
+```css
+.btn-1 {
+  width: 100px;
+}
+.btn-2 {
+  width: 200px;
+}
+.btn-3 {
+  width: 300px;
+}
+.btn-4 {
+  width: 440px;
+}
+.btn-5 {
+  width: 550px;
+}
+```
+
 **Aula 5**
+Entrada (Sass)
 ```scss
 @mixin scW($min, $max) {
     @media (min-width: $min) and (max-width: $max) {
@@ -43,8 +70,18 @@ $my-list: red green blue;
     }
 }
 ```
----
+Saída (compilado)
+```css
+@media (min-width: 320px) and (max-width: 790px) {
+  .my-class {
+    width: 100px;
+    height: 100px;
+  }
+}
+```
+
 **Aula 6**
+Entrada (Sass)
 ```scss
 %btn {
     padding: 10px 20px;
@@ -64,5 +101,24 @@ $my-list: red green blue;
 .btn-cancel {
     background-color: red;
     @extend %btn;
+}
+```
+Saída (compilado)
+```css
+.btn-generic, .btn-confirm, .btn-cancel {
+  padding: 10px 20px;
+  min-width: 120px;
+}
+
+.btn-generic {
+  background-color: gray;
+}
+
+.btn-confirm {
+  background-color: green;
+}
+
+.btn-cancel {
+  background-color: red;
 }
 ```
